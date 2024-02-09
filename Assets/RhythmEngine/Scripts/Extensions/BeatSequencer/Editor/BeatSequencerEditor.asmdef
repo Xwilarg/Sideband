@@ -1,0 +1,19 @@
+{
+    "name": "BeatSequencerEditor",
+    "rootNamespace": "RhythmEngine",
+    "references": [
+        "GUID:5c8feb1785f46774ba935edb725b641b",
+        "GUID:0de78d5813b8a6c49ae1e707d976af0e"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

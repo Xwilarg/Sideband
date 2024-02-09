@@ -1,0 +1,18 @@
+{
+    "name": "RhythmEngineEditor",
+    "rootNamespace": "RhythmEngine",
+    "references": [
+        "GUID:5c8feb1785f46774ba935edb725b641b"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
