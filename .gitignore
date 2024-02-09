@@ -1,5 +1,9 @@
-Assets/RhythmEngine/Samples/
+Assets/RhythmEngine/Samples/**
 Assets/RhythmEngine/Samples.meta
+
+# Gosh why is my gitignore not working
+!Assets/RhythmEngine/Samples/ManiaDemo/Common/Scripts/SimpleManiaNote.cs
+!Assets/RhythmEngine/Samples/ManiaDemo/Common/Scripts/SimpleManiaSong.cs
 
 /[Aa]ssets/TextMesh Pro/
 /[Aa]ssets/TextMesh Pro.meta
