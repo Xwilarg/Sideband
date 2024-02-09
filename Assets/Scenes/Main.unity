@@ -863,6 +863,7 @@ MonoBehaviour:
   _song: {fileID: 11400000, guid: a48352c88da14804195465df66ada54c, type: 2}
   _leftNoteContainer: {fileID: 1970736578}
   _rightNoteContainer: {fileID: 1113542867}
+  _notePrefab: {fileID: 4763663169228156807, guid: 1bd59a0bd199e9443b75a2f026bf2118, type: 3}
 --- !u!1001 &98614531835633287
 PrefabInstance:
   m_ObjectHideFlags: 0

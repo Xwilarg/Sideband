@@ -27,8 +27,6 @@ namespace RhythmJam2024
 
         private const float SpeedMultiplier = 1f;
 
-        public float SpeedUnit => SpeedMultiplier * _song.NoteData.BaseBpm;
-
         private void Awake()
         {
             _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
@@ -58,43 +56,54 @@ namespace RhythmJam2024
         {
             var time = _goodEngine.Engine.GetCurrentAudioTime();
             TrySpawningNotes(time);
+
+            foreach (var note in _spawnedNotes)
+            {
+                note.CurrentTime += Time.deltaTime * SpeedMultiplier;
+
+                note.RT.anchoredPosition = new(Mathf.Lerp(0f, note.RT.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.anchoredPosition.y);
+
+                if (note.CurrentTime > 1f)
+                {
+                    Destroy(note.GameObject);
+                    note.GameObject = null;
+                }
+            }
+
+            _spawnedNotes.RemoveAll(x => x.GameObject == null);
         }
 
         private void TrySpawningNotes(double currentTime)
         {
             if (_unspawnedNotes.Count == 0) return;
 
-            float dist = _rightNoteContainer.position.x; // Distance between where we hit and the middle of the screen
-
             var closestUnspawnedNote = _unspawnedNotes.Peek();
 
-            var offset = closestUnspawnedNote.Time - currentTime;
-            if (offset < dist)
+            if (currentTime > closestUnspawnedNote.Time - SpeedMultiplier)
             {
                 _unspawnedNotes.Dequeue();
-                SpawnNote(closestUnspawnedNote, (float)offset);
+                SpawnNote(currentTime);
             }
-
-            // Note: we spawn the notes {NoteFallTime} seconds before their actual time so they can fall from the top of the screen to the bottom.
         }
 
-        private void SpawnNote(SimpleManiaNote note, float offset)
+        private void SpawnNote(double currentTime)
         {
             var noteTransform = Instantiate(_notePrefab, _leftNoteContainer);
             var rt = (RectTransform)noteTransform.transform;
-            rt.anchoredPosition = new(offset, 0f); //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
+            rt.anchoredPosition = Vector2.zero; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
 
             _spawnedNotes.Add(new() {
                 GameObject = noteTransform,
-                RT = rt
+                RT = rt,
+                CurrentTime = currentTime
             });
-            //_spawnedNotes.Add(new SpawnedNote(noteTransform, note, currentTime, NoteFallTime)); // Add the note to the list of spawned notes
         }
 
         private record NoteData
         {
             public GameObject GameObject;
             public RectTransform RT;
+            public double CurrentTime;
         }
     }
 }
