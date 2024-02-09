@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ed2f6abad34c1458dc171fb7aed738, type: 3}
   m_Name: SampleData
   m_EditorClassIdentifier: 
-  Clip: {fileID: 0}
+  Clip: {fileID: 8300000, guid: 6640471e0629aed4a95ee5e05665e243, type: 3}
   FirstBeatOffset: 0
   Looping: 0
   BaseBpm: 140
@@ -20,7 +20,15 @@ MonoBehaviour:
   BeatSequences:
     BeatSequences: []
   BeatSequenceChanges: []
-  Notes: []
+  Notes:
+  - Time: 0.21428571428571427
+    Lane: 2
+  - Time: 0.42857142857142855
+    Lane: 0
+  - Time: 0.6428571428571428
+    Lane: 2
+  - Time: 0.8571428571428571
+    Lane: 0
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 100
