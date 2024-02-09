@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using RhythmEngine.Examples;
+using UnityEngine;
 
 namespace RhythmJam2024.SO
 {
@@ -7,6 +8,6 @@ namespace RhythmJam2024.SO
     {
         public AudioClip GoodClip, BadClip;
 
-        public int Bpm;
+        public SimpleManiaSong NoteData;
     }
 }

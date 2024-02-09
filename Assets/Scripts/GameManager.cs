@@ -17,12 +17,12 @@ namespace RhythmJam2024
             _goodEngine.Engine.SetSong(new Song()
             {
                 Clip = _song.GoodClip,
-                BaseBpm = _song.Bpm
+                BaseBpm = _song.NoteData.BaseBpm
             });
             _badEngine.Engine.SetSong(new Song()
             {
                 Clip = _song.BadClip,
-                BaseBpm = _song.Bpm
+                BaseBpm = _song.NoteData.BaseBpm
             });
 
             _goodEngine.Engine.InitTime();
