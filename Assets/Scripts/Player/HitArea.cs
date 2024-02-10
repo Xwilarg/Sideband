@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace RhythmEngine.Player
+namespace RhythmJam2024.Player
 {
     public class HitArea : MonoBehaviour
     {
