@@ -1,5 +1,6 @@
 using RhythmEngine;
 using RhythmEngine.Examples;
+using RhythmEngine.Player;
 using RhythmJam2024.SO;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,7 +20,7 @@ namespace RhythmJam2024
         private RectTransform _centerContainer;
 
         [SerializeField]
-        private RectTransform _leftNoteContainer, _rightNoteContainer;
+        private HitArea _leftNoteContainer, _rightNoteContainer;
 
         [SerializeField]
         private GameObject _notePrefab;
@@ -30,18 +31,8 @@ namespace RhythmJam2024
 
         private const float SpeedMultiplier = 1f;
 
-        private const int LineCount = 4;
-        private readonly List<int> _linesPos = new();
-
         private void Awake()
         {
-            var d = _centerContainer.sizeDelta.y / LineCount;
-            var half = _centerContainer.sizeDelta.y / 2f;
-            for (int i = 0; i < LineCount; i++)
-            {
-                _linesPos.Add(Mathf.RoundToInt(d * i - half));
-            }
-
             _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
 
             _goodEngine.Engine.SetSong(new Song()
@@ -105,16 +96,16 @@ namespace RhythmJam2024
 
             foreach (var container in containers)
             {
-                var noteTransform = Instantiate(_notePrefab, container);
+                var noteTransform = Instantiate(_notePrefab, container.GetHit(line));
                 var rt = (RectTransform)noteTransform.transform;
-                rt.position = new(_centerContainer.position.x, _centerContainer.position.y + _linesPos[line]);
+                rt.position = new(_centerContainer.position.x, container.GetHit(line).position.y);
 
                 _spawnedNotes.Add(new()
                 {
                     GameObject = noteTransform,
                     RT = rt,
                     CurrentTime = currentTime,
-                    TargetContainer = container,
+                    TargetContainer = (RectTransform)container.transform,
                     Line = line
                 });
             }
