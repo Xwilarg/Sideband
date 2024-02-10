@@ -37,7 +37,7 @@ namespace RhythmJam2024
 
         private readonly List<PlayerInputUnit> _players = new();
 
-        private const float SpeedMultiplier = 1f;
+        private const float FallDuration = 1f;
 
         private bool _didStart;
 
@@ -79,7 +79,7 @@ namespace RhythmJam2024
 
             foreach (var note in _spawnedNotes)
             {
-                note.CurrentTime += Time.deltaTime * SpeedMultiplier;
+                note.CurrentTime += Time.deltaTime * 1f / FallDuration;
 
                 note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.position.y);
 
@@ -115,10 +115,10 @@ namespace RhythmJam2024
 
             var closestUnspawnedNote = _unspawnedNotes.Peek();
 
-            if (currentTime > closestUnspawnedNote.Time - SpeedMultiplier)
+            if (currentTime > closestUnspawnedNote.Time - FallDuration)
             {
                 _unspawnedNotes.Dequeue();
-                SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - SpeedMultiplier));
+                SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - FallDuration));
             }
         }
 

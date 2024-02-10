@@ -1334,6 +1334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LeftHitArea
       objectReference: {fileID: 0}
+    - target: {fileID: 4750688682999031038, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
+      propertyPath: _hits.Array.data[3]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7962755559871380461, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

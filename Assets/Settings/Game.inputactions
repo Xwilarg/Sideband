@@ -6,7 +6,7 @@
             "id": "5ea5bf9e-0990-4d39-90c4-cbac171786b6",
             "actions": [
                 {
-                    "name": "Hit1",
+                    "name": "HitUp",
                     "type": "Button",
                     "id": "7d1eeb79-dedc-4e82-9b18-d33fa5926fcf",
                     "expectedControlType": "Button",
@@ -15,7 +15,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hit2",
+                    "name": "HitMid",
                     "type": "Button",
                     "id": "752f1a29-1ba5-4c45-9442-8baef6a74ad0",
                     "expectedControlType": "Button",
@@ -24,7 +24,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hit3",
+                    "name": "HitDown",
                     "type": "Button",
                     "id": "ec7d6a23-05d6-467b-b2e4-b4da356191c4",
                     "expectedControlType": "Button",
@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Hit4",
+                    "name": "HitSpe",
                     "type": "Button",
                     "id": "14a40ea7-a6f4-44bf-a2ab-d46141298364",
                     "expectedControlType": "Button",
@@ -46,44 +46,44 @@
                 {
                     "name": "",
                     "id": "143bb1cd-cc10-4eca-a2f0-a3664166fe91",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
-                    "action": "Hit1",
+                    "action": "HitUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
-                    "path": "<Keyboard>/d",
+                    "path": "<Keyboard>/leftShift",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "Hit1",
+                    "action": "HitUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "695c7870-7f83-4068-8f49-8de804140ffa",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Hit2",
+                    "action": "HitMid",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "82b44027-9adf-4e77-a5b4-1ea5b173d254",
-                    "path": "<Keyboard>/f",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Hit2",
+                    "action": "HitMid",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -94,18 +94,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Hit3",
+                    "action": "HitDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "ac39cc3a-d277-463a-a5e9-692f005a0741",
-                    "path": "<Keyboard>/j",
+                    "path": "<Keyboard>/rightShift",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Hit3",
+                    "action": "HitDown",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -116,18 +116,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Hit4",
+                    "action": "HitSpe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "fde28db1-59d0-4794-b363-448f9145eba9",
-                    "path": "<Keyboard>/k",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Hit4",
+                    "action": "HitSpe",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
