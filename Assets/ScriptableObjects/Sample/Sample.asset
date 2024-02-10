@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: 6640471e0629aed4a95ee5e05665e243, type: 3}
   BadClip: {fileID: 8300000, guid: 9aeb8ab237450f84f80b153e5ded868f, type: 3}
-  Bpm: 150
+  NoteData: {fileID: 11400000, guid: 9d47e8a29405066419c171b46f152505, type: 2}
