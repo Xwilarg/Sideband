@@ -64,7 +64,7 @@ namespace RhythmJam2024
             {
                 note.CurrentTime += Time.deltaTime * SpeedMultiplier;
 
-                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, _leftNoteContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.position.y);
+                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.position.y);
 
                 if (note.CurrentTime > 1f)
                 {
@@ -91,15 +91,22 @@ namespace RhythmJam2024
 
         private void SpawnNote(double currentTime)
         {
-            var noteTransform = Instantiate(_notePrefab, _leftNoteContainer);
-            var rt = (RectTransform)noteTransform.transform;
-            rt.position = _centerContainer.position; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
+            var containers = new[] { _leftNoteContainer, _rightNoteContainer };
 
-            _spawnedNotes.Add(new() {
-                GameObject = noteTransform,
-                RT = rt,
-                CurrentTime = currentTime
-            });
+            foreach (var container in containers)
+            {
+                var noteTransform = Instantiate(_notePrefab, container);
+                var rt = (RectTransform)noteTransform.transform;
+                rt.position = _centerContainer.position; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
+
+                _spawnedNotes.Add(new()
+                {
+                    GameObject = noteTransform,
+                    RT = rt,
+                    CurrentTime = currentTime,
+                    TargetContainer = container
+                });
+            }
         }
 
         private class NoteData
@@ -107,6 +114,7 @@ namespace RhythmJam2024
             public GameObject GameObject;
             public RectTransform RT;
             public double CurrentTime;
+            public RectTransform TargetContainer;
         }
     }
 }
