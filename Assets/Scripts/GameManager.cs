@@ -53,12 +53,14 @@ namespace RhythmJam2024
             _goodEngine.Engine.SetSong(new Song()
             {
                 Clip = _song.GoodClip,
-                BaseBpm = _song.NoteData.BaseBpm
+                BaseBpm = _song.NoteData.BaseBpm,
+                FirstBeatOffset = 3000
             });
             _badEngine.Engine.SetSong(new Song()
             {
                 Clip = _song.BadClip,
-                BaseBpm = _song.NoteData.BaseBpm
+                BaseBpm = _song.NoteData.BaseBpm,
+                FirstBeatOffset = 3000
             });
 
             _goodEngine.Engine.InitTime();
