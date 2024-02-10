@@ -10,6 +10,8 @@ namespace RhythmJam2024
 {
     public class GameManager : MonoBehaviour
     {   
+        public static GameManager Instance { private set; get; }
+
         [SerializeField]
         private ToneAudioManager _goodEngine, _badEngine;
 
@@ -20,7 +22,7 @@ namespace RhythmJam2024
         private RectTransform _centerContainer;
 
         [SerializeField]
-        private HitArea _leftNoteContainer, _rightNoteContainer;
+        private HitArea[] _containers;
 
         [SerializeField]
         private GameObject _notePrefab;
@@ -29,10 +31,14 @@ namespace RhythmJam2024
 
         private readonly List<NoteData> _spawnedNotes = new();
 
+        private readonly List<PlayerInputUnit> _players = new();
+
         private const float SpeedMultiplier = 1f;
 
         private void Awake()
         {
+            Instance = this;
+
             _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
 
             _goodEngine.Engine.SetSong(new Song()
@@ -77,6 +83,12 @@ namespace RhythmJam2024
             _spawnedNotes.RemoveAll(x => x.GameObject == null);
         }
 
+        public void RegisterPlayer(PlayerInputUnit unit)
+        {
+            unit.Init(_containers[_players.Count]);
+            _players.Add(unit);
+        }
+
         private void TrySpawningNotes(double currentTime)
         {
             if (_unspawnedNotes.Count == 0) return;
@@ -92,9 +104,7 @@ namespace RhythmJam2024
 
         private void SpawnNote(int line, double currentTime)
         {
-            var containers = new[] { _leftNoteContainer, _rightNoteContainer };
-
-            foreach (var container in containers)
+            foreach (var container in _containers)
             {
                 var noteTransform = Instantiate(_notePrefab, container.GetHit(line));
                 var rt = (RectTransform)noteTransform.transform;
