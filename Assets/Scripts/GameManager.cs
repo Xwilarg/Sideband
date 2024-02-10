@@ -30,8 +30,18 @@ namespace RhythmJam2024
 
         private const float SpeedMultiplier = 1f;
 
+        private const int LineCount = 4;
+        private readonly List<int> _linesPos = new();
+
         private void Awake()
         {
+            var d = _centerContainer.sizeDelta.y / LineCount;
+            var half = _centerContainer.sizeDelta.y / 2f;
+            for (int i = 0; i < LineCount; i++)
+            {
+                _linesPos.Add(Mathf.RoundToInt(d * i - half));
+            }
+
             _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
 
             _goodEngine.Engine.SetSong(new Song()
@@ -85,11 +95,11 @@ namespace RhythmJam2024
             if (currentTime > closestUnspawnedNote.Time - SpeedMultiplier)
             {
                 _unspawnedNotes.Dequeue();
-                SpawnNote(currentTime - (closestUnspawnedNote.Time - SpeedMultiplier));
+                SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - SpeedMultiplier));
             }
         }
 
-        private void SpawnNote(double currentTime)
+        private void SpawnNote(int line, double currentTime)
         {
             var containers = new[] { _leftNoteContainer, _rightNoteContainer };
 
@@ -97,14 +107,15 @@ namespace RhythmJam2024
             {
                 var noteTransform = Instantiate(_notePrefab, container);
                 var rt = (RectTransform)noteTransform.transform;
-                rt.position = _centerContainer.position; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
+                rt.position = new(_centerContainer.position.x, _centerContainer.position.y + _linesPos[line]);
 
                 _spawnedNotes.Add(new()
                 {
                     GameObject = noteTransform,
                     RT = rt,
                     CurrentTime = currentTime,
-                    TargetContainer = container
+                    TargetContainer = container,
+                    Line = line
                 });
             }
         }
@@ -115,6 +126,7 @@ namespace RhythmJam2024
             public RectTransform RT;
             public double CurrentTime;
             public RectTransform TargetContainer;
+            public int Line;
         }
     }
 }

@@ -22,13 +22,13 @@ MonoBehaviour:
   BeatSequenceChanges: []
   Notes:
   - Time: 0.21428571428571427
-    Lane: 2
-  - Time: 0.42857142857142855
     Lane: 0
+  - Time: 0.42857142857142855
+    Lane: 1
   - Time: 0.6428571428571428
     Lane: 2
   - Time: 0.8571428571428571
-    Lane: 0
+    Lane: 3
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 100
