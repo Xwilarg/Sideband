@@ -861,6 +861,7 @@ MonoBehaviour:
   _goodEngine: {fileID: 1161287871}
   _badEngine: {fileID: 904422475}
   _song: {fileID: 11400000, guid: a48352c88da14804195465df66ada54c, type: 2}
+  _centerContainer: {fileID: 1729164584}
   _leftNoteContainer: {fileID: 1970736578}
   _rightNoteContainer: {fileID: 1113542867}
   _notePrefab: {fileID: 4763663169228156807, guid: 1bd59a0bd199e9443b75a2f026bf2118, type: 3}

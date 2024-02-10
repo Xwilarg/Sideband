@@ -3,7 +3,6 @@ using RhythmEngine.Examples;
 using RhythmJam2024.SO;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace RhythmJam2024
@@ -15,6 +14,9 @@ namespace RhythmJam2024
 
         [SerializeField]
         private TwoToneSong _song;
+
+        [SerializeField]
+        private RectTransform _centerContainer;
 
         [SerializeField]
         private RectTransform _leftNoteContainer, _rightNoteContainer;
@@ -62,7 +64,7 @@ namespace RhythmJam2024
             {
                 note.CurrentTime += Time.deltaTime * SpeedMultiplier;
 
-                note.RT.anchoredPosition = new(Mathf.Lerp(0f, _rightNoteContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.anchoredPosition.y);
+                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, _leftNoteContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.position.y);
 
                 if (note.CurrentTime > 1f)
                 {
@@ -91,7 +93,7 @@ namespace RhythmJam2024
         {
             var noteTransform = Instantiate(_notePrefab, _leftNoteContainer);
             var rt = (RectTransform)noteTransform.transform;
-            rt.anchoredPosition = Vector2.zero; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
+            rt.position = _centerContainer.position; //new Vector3(LanePositions[note.Lane], SpawnHeight, 0); // Set the note's position to the correct lane and the spawn height
 
             _spawnedNotes.Add(new() {
                 GameObject = noteTransform,
