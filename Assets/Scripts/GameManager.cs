@@ -3,6 +3,7 @@ using RhythmEngine.Examples;
 using RhythmJam2024.SO;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace RhythmJam2024
@@ -61,7 +62,7 @@ namespace RhythmJam2024
             {
                 note.CurrentTime += Time.deltaTime * SpeedMultiplier;
 
-                note.RT.anchoredPosition = new(Mathf.Lerp(0f, note.RT.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.anchoredPosition.y);
+                note.RT.anchoredPosition = new(Mathf.Lerp(0f, _rightNoteContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.anchoredPosition.y);
 
                 if (note.CurrentTime > 1f)
                 {
@@ -82,7 +83,7 @@ namespace RhythmJam2024
             if (currentTime > closestUnspawnedNote.Time - SpeedMultiplier)
             {
                 _unspawnedNotes.Dequeue();
-                SpawnNote(currentTime);
+                SpawnNote(currentTime - (closestUnspawnedNote.Time - SpeedMultiplier));
             }
         }
 
@@ -99,7 +100,7 @@ namespace RhythmJam2024
             });
         }
 
-        private record NoteData
+        private class NoteData
         {
             public GameObject GameObject;
             public RectTransform RT;
