@@ -33,6 +33,8 @@ namespace RhythmJam2024.Player
         {
             _hits[line].Image.color = _hits[line].BaseColor;
         }
+
+        public Color NoteColor(int line) => _hits[line].PressedColor;
     }
 
     [System.Serializable]

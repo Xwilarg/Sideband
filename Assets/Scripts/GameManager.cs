@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RhythmJam2024
 {
@@ -126,9 +127,13 @@ namespace RhythmJam2024
         {
             foreach (var container in _containers)
             {
-                var noteTransform = Instantiate(_notePrefab, container.GetHit(line));
+                var parent = container.GetHit(line);
+                var noteTransform = Instantiate(_notePrefab, parent);
                 var rt = (RectTransform)noteTransform.transform;
-                rt.position = new(_centerContainer.position.x, container.GetHit(line).position.y);
+                rt.sizeDelta = new(rt.sizeDelta.x, parent.sizeDelta.y);
+                rt.position = new(_centerContainer.position.x, parent.position.y);
+
+                noteTransform.GetComponent<Image>().color = container.NoteColor(line);
 
                 _spawnedNotes.Add(new()
                 {
