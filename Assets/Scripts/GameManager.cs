@@ -135,7 +135,7 @@ namespace RhythmJam2024
                     GameObject = noteTransform,
                     RT = rt,
                     CurrentTime = currentTime,
-                    TargetContainer = (RectTransform)container.transform,
+                    TargetContainer = container.LinesRT,
                     Line = line
                 });
             }

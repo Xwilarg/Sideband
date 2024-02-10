@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 namespace RhythmJam2024.Player
@@ -7,27 +6,44 @@ namespace RhythmJam2024.Player
     public class HitArea : MonoBehaviour
     {
         [SerializeField]
-        private RectTransform[] _hits;
+        private LineInfo[] _hits;
 
-        private Image[] _images;
+        [SerializeField]
+        private RectTransform _linesRT;
+        public RectTransform LinesRT => _linesRT;
 
         public int LineCount => _hits.Length;
 
-        public RectTransform GetHit(int index) => _hits[index];
+        public RectTransform GetHit(int index) => _hits[index].Hit;
 
         private void Awake()
         {
-            _images = _hits.Select(x => x.GetComponent<Image>()).ToArray();
+            foreach (var line in _hits)
+            {
+                line.BaseColor = line.Image.color;
+            }
         }
 
         public void OnKeyDown(int line)
         {
-            _images[line].color = Color.black;
+            _hits[line].Image.color = _hits[line].PressedColor;
         }
 
         public void OnKeyUp(int line)
         {
-            _images[line].color = Color.white;
+            _hits[line].Image.color = _hits[line].BaseColor;
         }
+    }
+
+    [System.Serializable]
+    public class LineInfo
+    {
+        public RectTransform Hit;
+        public Color PressedColor;
+
+        [HideInInspector]
+        public Color BaseColor;
+
+        public Image Image;
     }
 }
