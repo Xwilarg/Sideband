@@ -19,7 +19,14 @@ namespace RhythmJam2024.Player
 
         private void OnHit(InputAction.CallbackContext value, int line)
         {
-
+            if (value.phase == InputActionPhase.Started)
+            {
+                _hitArea.OnKeyDown(line);
+            }
+            else if (value.phase == InputActionPhase.Canceled)
+            {
+                _hitArea.OnKeyUp(line);
+            }
         }
 
         public void OnHit1(InputAction.CallbackContext value) => OnHit(value, 0);
