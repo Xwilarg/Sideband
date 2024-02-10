@@ -148,6 +148,17 @@ namespace RhythmJam2024
             }
         }
 
+        public void HitNote(int line)
+        {
+            var targetNote = _spawnedNotes.FirstOrDefault(x => x.Line == line);
+            if (targetNote == null) // No spawned note on this line
+            {
+                return;
+            }
+
+            // TODO: Did we hit the note
+        }
+
         private class NoteData
         {
             public GameObject GameObject;
