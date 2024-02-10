@@ -4,6 +4,7 @@ using RhythmJam2024.Player;
 using RhythmJam2024.SO;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 namespace RhythmJam2024
@@ -27,6 +28,9 @@ namespace RhythmJam2024
         [SerializeField]
         private GameObject _notePrefab;
 
+        [SerializeField]
+        private TMP_Text _waitingForPlayers;
+
         private Queue<SimpleManiaNote> _unspawnedNotes;
 
         private readonly List<NoteData> _spawnedNotes = new();
@@ -34,6 +38,10 @@ namespace RhythmJam2024
         private readonly List<PlayerInputUnit> _players = new();
 
         private const float SpeedMultiplier = 1f;
+
+        private bool _didStart;
+
+        public int PlayerCount => 1;
 
         private void Awake()
         {
@@ -55,15 +63,17 @@ namespace RhythmJam2024
             _goodEngine.Engine.InitTime();
             _badEngine.Engine.InitTime();
 
-            _goodEngine.Engine.Play();
-            _badEngine.Engine.Play();
-
             _goodEngine.SetVolume(.5f);
             _badEngine.SetVolume(.5f);
         }
 
         private void Update()
         {
+            if (!_didStart)
+            {
+                return;
+            }
+
             var time = _goodEngine.Engine.GetCurrentAudioTime();
             TrySpawningNotes(time);
 
@@ -87,6 +97,16 @@ namespace RhythmJam2024
         {
             unit.Init(_containers[_players.Count]);
             _players.Add(unit);
+
+            if (_players.Count == PlayerCount)
+            {
+                _waitingForPlayers.gameObject.SetActive(false);
+
+                _goodEngine.Engine.Play();
+                _badEngine.Engine.Play();
+
+                _didStart = true;
+            }
         }
 
         private void TrySpawningNotes(double currentTime)
