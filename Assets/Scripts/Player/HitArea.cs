@@ -46,7 +46,6 @@ namespace RhythmJam2024.Player
             foreach (var line in _hits)
             {
                 line.BaseColor = line.Image.color;
-                line.KeyImage = line.Hit.GetComponent<Image>();
             }
         }
 
@@ -71,20 +70,12 @@ namespace RhythmJam2024.Player
         {
             var hit = _hits[line];
             hit.Image.color = _hits[line].PressedColor;
-            if (hit.KeyImage != null)
-            {
-                hit.KeyImage.color = Color.black;
-            }
         }
 
         public void OnKeyUp(int line)
         {
             var hit = _hits[line];
             hit.Image.color = _hits[line].BaseColor;
-            if (hit.KeyImage != null)
-            {
-                hit.KeyImage.color = Color.white;
-            }
         }
 
         public Color NoteColor(int line) => _hits[line].PressedColor;
@@ -107,9 +98,6 @@ namespace RhythmJam2024.Player
 
         [HideInInspector]
         public Color BaseColor;
-
-        [HideInInspector]
-        public Image KeyImage;
 
         public Image Image;
     }
