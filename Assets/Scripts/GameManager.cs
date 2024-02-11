@@ -183,6 +183,8 @@ namespace RhythmJam2024
 
                     _containers[0].SetScoreValue(delta);
                     _containers[1].SetScoreValue(1f - delta);
+                    _goodEngine.SetVolume(delta);
+                    _badEngine.SetVolume(1f - delta);
                     break;
                 }
             }

@@ -12,7 +12,7 @@ namespace RhythmJam2024
         private void Awake()
         {
             Engine = GetComponent<RhythmEngineCore>();
-            _source = GetComponentInChildren<AudioSource>();
+            _source = transform.GetChild(0).GetComponent<AudioSource>();
         }
 
         public void SetVolume(float value)
