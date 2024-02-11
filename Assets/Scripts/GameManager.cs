@@ -5,6 +5,7 @@ using RhythmJam2024.SO;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -87,9 +88,9 @@ namespace RhythmJam2024
             {
                 note.CurrentTime += Time.deltaTime * 1f / FallDuration;
 
-                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, Mathf.Clamp01((float)note.CurrentTime)), note.RT.position.y);
+                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, (float)note.CurrentTime), note.RT.position.y);
 
-                if (note.CurrentTime > 1f)
+                if (note.CurrentTime > 1f + _info.HitInfo.Last().Distance)
                 {
                     note.HitArea.ShowHitInfo(_info.MissInfo);
 
@@ -163,6 +164,18 @@ namespace RhythmJam2024
                 return;
             }
 
+            var dist = Mathf.Abs(1f - (float)targetNote.CurrentTime);
+            for (int i = _info.HitInfo.Length - 1; i >= 0; i--)
+            {
+                if (dist < _info.HitInfo[i].Distance)
+                {
+                    targetNote.HitArea.ShowHitInfo(_info.HitInfo[i]);
+
+                    Destroy(targetNote.GameObject);
+                    _spawnedNotes.Remove(targetNote);
+                    break;
+                }
+            }
             // TODO: Did we hit the note
         }
 
