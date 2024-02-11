@@ -20,7 +20,7 @@ namespace RhythmJam2024.Player
 
         public int LineCount => _hits.Length;
 
-        public RectTransform GetHit(int index) => _hits[index].Hit;
+        public LineInfo GetLineInfo(int index) => _hits[index];
 
         private float _hitTextTimer;
 

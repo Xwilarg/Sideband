@@ -135,11 +135,11 @@ namespace RhythmJam2024
         {
             foreach (var container in _containers)
             {
-                var parent = container.GetHit(line);
-                var noteTransform = Instantiate(_notePrefab, parent);
+                var parent = container.GetLineInfo(line);
+                var noteTransform = Instantiate(_notePrefab, parent.Hit);
                 var rt = (RectTransform)noteTransform.transform;
-                rt.sizeDelta = new(rt.sizeDelta.x, parent.sizeDelta.y);
-                rt.position = new(_centerContainer.position.x, parent.position.y);
+                rt.sizeDelta = new(rt.sizeDelta.x, parent.Hit.rect.height);
+                rt.position = new(_centerContainer.position.x, parent.Hit.position.y);
 
                 noteTransform.GetComponent<Image>().color = container.NoteColor(line);
 
