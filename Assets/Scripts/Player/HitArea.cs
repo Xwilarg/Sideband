@@ -16,9 +16,26 @@ namespace RhythmJam2024.Player
         [SerializeField]
         private TMP_Text _hitText;
 
+        [SerializeField]
+        private RectTransform _associatedScoreContainer;
+
+        [SerializeField]
+        private TMP_Text _scoreText;
+
         public RectTransform LinesRT => _linesRT;
 
         public int LineCount => _hits.Length;
+
+        private int _score;
+        public int Score
+        {
+            set
+            {
+                _score = value;
+                _scoreText.text = $"{_score}";
+            }
+            get => _score;
+        }
 
         public LineInfo GetLineInfo(int index) => _hits[index];
 
@@ -42,6 +59,11 @@ namespace RhythmJam2024.Player
                     _hitText.gameObject.SetActive(false);
                 }
             }
+        }
+
+        public void SetScoreValue(float value)
+        {
+            _associatedScoreContainer.localScale = new(value, 1f);
         }
 
         public void OnKeyDown(int line)

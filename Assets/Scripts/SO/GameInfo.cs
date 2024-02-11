@@ -5,6 +5,8 @@ namespace RhythmJam2024.SO
     [CreateAssetMenu(fileName = "GameInfo", menuName = "RhythmJam2024/GameInfo")]
     public class GameInfo : ScriptableObject
     {
+        public float MaxScoreDiff;
+
         [Header("Note info")]
         public HitInfo[] HitInfo;
         public HitInfo MissInfo;

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4dbeec08cd7ff4ca2ffdfdeca6ace4, type: 3}
   m_Name: GameInfo
   m_EditorClassIdentifier: 
+  MaxScoreDiff: 10000
   HitInfo:
   - DisplayText: Bad
     Distance: 0.1

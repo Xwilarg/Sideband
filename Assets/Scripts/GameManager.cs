@@ -167,16 +167,25 @@ namespace RhythmJam2024
             var dist = Mathf.Abs(1f - (float)targetNote.CurrentTime);
             for (int i = _info.HitInfo.Length - 1; i >= 0; i--)
             {
-                if (dist < _info.HitInfo[i].Distance)
+                var info = _info.HitInfo[i];
+                if (dist < info.Distance)
                 {
-                    targetNote.HitArea.ShowHitInfo(_info.HitInfo[i]);
+                    targetNote.HitArea.ShowHitInfo(info);
+
+                    targetNote.HitArea.Score += info.Score;
 
                     Destroy(targetNote.GameObject);
                     _spawnedNotes.Remove(targetNote);
+
+                    var diff = _containers[0].Score - _containers[1].Score;
+
+                    var delta = Mathf.Clamp(diff * .5f / _info.MaxScoreDiff, -.5f, .5f) + .5f;
+
+                    _containers[0].SetScoreValue(delta);
+                    _containers[1].SetScoreValue(1f - delta);
                     break;
                 }
             }
-            // TODO: Did we hit the note
         }
 
         private class NoteData
