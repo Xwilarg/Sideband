@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using RhythmJam2024.SO;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace RhythmJam2024.Player
@@ -10,17 +12,35 @@ namespace RhythmJam2024.Player
 
         [SerializeField]
         private RectTransform _linesRT;
+
+        [SerializeField]
+        private TMP_Text _hitText;
+
         public RectTransform LinesRT => _linesRT;
 
         public int LineCount => _hits.Length;
 
         public RectTransform GetHit(int index) => _hits[index].Hit;
 
+        private float _hitTextTimer;
+
         private void Awake()
         {
             foreach (var line in _hits)
             {
                 line.BaseColor = line.Image.color;
+            }
+        }
+
+        private void Update()
+        {
+            if (_hitTextTimer > 0f)
+            {
+                _hitTextTimer -= Time.deltaTime;
+                if (_hitTextTimer <= 0f)
+                {
+                    _hitText.gameObject.SetActive(false);
+                }
             }
         }
 
@@ -35,6 +55,15 @@ namespace RhythmJam2024.Player
         }
 
         public Color NoteColor(int line) => _hits[line].PressedColor;
+
+        public void ShowHitInfo(HitInfo hit)
+        {
+            _hitText.text = hit.DisplayText;
+            _hitText.color = hit.Color;
+
+            _hitText.gameObject.SetActive(true);
+            _hitTextTimer = 1f;
+        }
     }
 
     [System.Serializable]

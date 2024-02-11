@@ -15,6 +15,9 @@ namespace RhythmJam2024
         public static GameManager Instance { private set; get; }
 
         [SerializeField]
+        private GameInfo _info;
+
+        [SerializeField]
         private ToneAudioManager _goodEngine, _badEngine;
 
         [SerializeField]
@@ -88,6 +91,8 @@ namespace RhythmJam2024
 
                 if (note.CurrentTime > 1f)
                 {
+                    note.HitArea.ShowHitInfo(_info.MissInfo);
+
                     Destroy(note.GameObject);
                     note.GameObject = null;
                 }
@@ -143,7 +148,9 @@ namespace RhythmJam2024
                     RT = rt,
                     CurrentTime = currentTime,
                     TargetContainer = container.LinesRT,
-                    Line = line
+                    Line = line,
+
+                    HitArea = container
                 });
             }
         }
@@ -166,6 +173,8 @@ namespace RhythmJam2024
             public double CurrentTime;
             public RectTransform TargetContainer;
             public int Line;
+
+            public HitArea HitArea;
         }
     }
 }
