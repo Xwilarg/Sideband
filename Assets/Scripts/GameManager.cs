@@ -7,6 +7,7 @@ using System.Linq;
 using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace RhythmJam2024
@@ -36,6 +37,9 @@ namespace RhythmJam2024
         [SerializeField]
         private TMP_Text _waitingForPlayers;
 
+        [SerializeField]
+        private PlayerInputManager _inputManager;
+
         private Queue<SimpleManiaNote> _unspawnedNotes;
 
         private readonly List<NoteData> _spawnedNotes = new();
@@ -46,13 +50,16 @@ namespace RhythmJam2024
 
         private bool _didStart;
 
-        public int PlayerCount => 1;
-
         private void Awake()
         {
             Instance = this;
 
             _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
+
+            if (StaticData.IsAgainstAI)
+            {
+                _containers[1].IsAIController = true;
+            }
 
             _goodEngine.Engine.SetSong(new Song()
             {
@@ -88,18 +95,34 @@ namespace RhythmJam2024
             {
                 note.CurrentTime += Time.deltaTime * 1f / FallDuration;
 
-                note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, (float)note.CurrentTime), note.RT.position.y);
-
-                if (note.CurrentTime > 1f + _info.HitInfo.Last().Distance)
+                if (note.GameObject != null)
                 {
-                    note.HitArea.ShowHitInfo(_info.MissInfo);
+                    note.RT.position = new(Mathf.Lerp(_centerContainer.position.x, note.TargetContainer.position.x, (float)note.CurrentTime), note.RT.position.y);
+                }
 
-                    Destroy(note.GameObject);
-                    note.GameObject = null;
+                if (note.CurrentTime > 1f)
+                {
+                    if (note.GameObject != null)
+                    {
+                        if (note.HitArea.IsAIController)
+                        {
+                            note.HitArea.OnKeyDownSpring(note.Line);
+                            GameManager.Instance.HitNote(note.Line);
+                        }
+
+                        Destroy(note.GameObject);
+                        note.GameObject = null;
+                    }
+
+                    if (note.CurrentTime > 1f + _info.HitInfo.Last().Distance)
+                    {
+                        note.HitArea.ShowHitInfo(_info.MissInfo);
+                        note.PendingRemoval = true;
+                    }
                 }
             }
 
-            _spawnedNotes.RemoveAll(x => x.GameObject == null);
+            _spawnedNotes.RemoveAll(x => x.PendingRemoval);
         }
 
         public void RegisterPlayer(PlayerInputUnit unit)
@@ -107,7 +130,7 @@ namespace RhythmJam2024
             unit.Init(_containers[_players.Count]);
             _players.Add(unit);
 
-            if (_players.Count == PlayerCount)
+            if (_players.Count == (StaticData.IsAgainstAI ? 1 : 2))
             {
                 _waitingForPlayers.gameObject.SetActive(false);
 
@@ -115,6 +138,12 @@ namespace RhythmJam2024
                 _badEngine.Engine.Play();
 
                 _didStart = true;
+
+
+                if (StaticData.IsAgainstAI)
+                {
+                    _inputManager.DisableJoining();
+                }
             }
         }
 
@@ -199,6 +228,8 @@ namespace RhythmJam2024
             public int Line;
 
             public HitArea HitArea;
+
+            public bool PendingRemoval;
         }
     }
 }

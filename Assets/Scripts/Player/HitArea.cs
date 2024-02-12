@@ -1,4 +1,5 @@
 ﻿using RhythmJam2024.SO;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,8 @@ namespace RhythmJam2024.Player
 
         [SerializeField]
         private TMP_Text _scoreText;
+
+        public bool IsAIController { set; get; }
 
         public RectTransform LinesRT => _linesRT;
 
@@ -64,6 +67,17 @@ namespace RhythmJam2024.Player
         public void SetScoreValue(float value)
         {
             _associatedScoreContainer.localScale = new(value, 1f);
+        }
+
+        public void OnKeyDownSpring(int line)
+        {
+            StartCoroutine(OnKeyDownSpringEnumerator(line));
+        }
+        private IEnumerator OnKeyDownSpringEnumerator(int line)
+        {
+            OnKeyDown(line);
+            yield return new WaitForSeconds(.25f);
+            OnKeyUp(line);
         }
 
         public void OnKeyDown(int line)

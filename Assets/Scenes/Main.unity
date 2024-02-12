@@ -1833,6 +1833,7 @@ MonoBehaviour:
   - {fileID: 1190590771}
   _notePrefab: {fileID: 4763663169228156807, guid: 1bd59a0bd199e9443b75a2f026bf2118, type: 3}
   _waitingForPlayers: {fileID: 1467500587}
+  _inputManager: {fileID: 2048548807}
 --- !u!114 &2048548807
 MonoBehaviour:
   m_ObjectHideFlags: 0
