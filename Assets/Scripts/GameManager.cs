@@ -107,7 +107,7 @@ namespace RhythmJam2024
                         if (note.HitArea.IsAIController)
                         {
                             note.HitArea.OnKeyDownSpring(note.Line);
-                            GameManager.Instance.HitNote(note.Line);
+                            HitNote(note.Line, note.HitArea.GetInstanceID());
                         }
 
                         Destroy(note.GameObject);
@@ -185,9 +185,9 @@ namespace RhythmJam2024
             }
         }
 
-        public void HitNote(int line)
+        public void HitNote(int line, int id)
         {
-            var targetNote = _spawnedNotes.FirstOrDefault(x => x.Line == line);
+            var targetNote = _spawnedNotes.FirstOrDefault(x => x.Line == line && x.HitArea.GetInstanceID() == id && !x.PendingRemoval);
             if (targetNote == null) // No spawned note on this line
             {
                 return;
@@ -204,7 +204,8 @@ namespace RhythmJam2024
                     targetNote.HitArea.Score += info.Score;
 
                     Destroy(targetNote.GameObject);
-                    _spawnedNotes.Remove(targetNote);
+                    targetNote.GameObject = null;
+                    targetNote.PendingRemoval = true;
 
                     var diff = _containers[0].Score - _containers[1].Score;
 

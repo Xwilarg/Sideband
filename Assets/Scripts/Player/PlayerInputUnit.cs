@@ -27,7 +27,7 @@ namespace RhythmJam2024.Player
             if (value.phase == InputActionPhase.Started)
             {
                 _hitArea.OnKeyDown(line);
-                GameManager.Instance.HitNote(line);
+                GameManager.Instance.HitNote(line, _hitArea.GetInstanceID());
             }
             else if (value.phase == InputActionPhase.Canceled)
             {
