@@ -1947,6 +1947,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1107779636}
     m_Modifications:
+    - target: {fileID: 2617788328691921001, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4fc00f977f5a477468f1a2564eeb1886, type: 3}
     - target: {fileID: 4558996151293009776, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
       propertyPath: m_Name
       value: LeftHitArea
@@ -2087,6 +2091,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8067314006276828671, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: dbd26d63b84d0794c935048b4b8d588b, type: 2}
     - target: {fileID: 8570068046746362321, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
