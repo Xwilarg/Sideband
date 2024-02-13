@@ -1,4 +1,3 @@
-using RhythmEngine;
 using RhythmEngine.Examples;
 using RhythmJam2024.Player;
 using RhythmJam2024.SO;
@@ -59,22 +58,12 @@ namespace RhythmJam2024
             {
                 _containers[1].IsAIController = true;
             }
+        }
 
-            _goodEngine.Engine.SetSong(new Song()
-            {
-                Clip = _song.GoodClip,
-                BaseBpm = _song.NoteData.BaseBpm,
-                FirstBeatOffset = 3000
-            });
-            _badEngine.Engine.SetSong(new Song()
-            {
-                Clip = _song.BadClip,
-                BaseBpm = _song.NoteData.BaseBpm,
-                FirstBeatOffset = 3000
-            });
-
-            _goodEngine.Engine.InitTime();
-            _badEngine.Engine.InitTime();
+        private void Start()
+        {
+            _goodEngine.SetClip(_song.GoodClip);
+            _badEngine.SetClip(_song.BadClip);
 
             _goodEngine.SetVolume(.5f);
             _badEngine.SetVolume(.5f);
@@ -87,7 +76,7 @@ namespace RhythmJam2024
                 return;
             }
 
-            var time = _goodEngine.Engine.GetCurrentAudioTime();
+            var time = _goodEngine.GetTime();
             TrySpawningNotes(time);
 
             foreach (var note in _spawnedNotes)
@@ -133,8 +122,8 @@ namespace RhythmJam2024
             {
                 _waitingForPlayers.gameObject.SetActive(false);
 
-                _goodEngine.Engine.Play();
-                _badEngine.Engine.Play();
+                _goodEngine.Play(3f);
+                _badEngine.Play(3f);
 
                 _didStart = true;
 
