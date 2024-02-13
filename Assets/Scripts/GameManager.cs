@@ -6,6 +6,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace RhythmJam2024
@@ -19,9 +20,6 @@ namespace RhythmJam2024
 
         [SerializeField]
         private ToneAudioManager _goodEngine, _badEngine;
-
-        [SerializeField]
-        private TwoToneSong _song;
 
         [SerializeField]
         private RectTransform _centerContainer;
@@ -38,6 +36,8 @@ namespace RhythmJam2024
         [SerializeField]
         private PlayerInputManager _inputManager;
 
+        private TwoToneSong _song;
+
         private Queue<SimpleManiaNote> _unspawnedNotes;
 
         private readonly List<NoteData> _spawnedNotes = new();
@@ -52,7 +52,7 @@ namespace RhythmJam2024
         {
             Instance = this;
 
-            _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
+            SceneManager.LoadScene("SongData", LoadSceneMode.Additive);
 
             if (StaticData.IsAgainstAI)
             {
@@ -62,6 +62,10 @@ namespace RhythmJam2024
 
         private void Start()
         {
+            _song = SongManager.Instance.Songs[StaticData.SongSelected];
+
+            _unspawnedNotes = new Queue<SimpleManiaNote>(_song.NoteData.Notes.OrderBy(note => note.Time));
+
             _goodEngine.SetClip(_song.GoodClip);
             _badEngine.SetClip(_song.BadClip);
 

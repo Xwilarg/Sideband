@@ -7,6 +7,7 @@ namespace RhythmJam2024.SO
     public class TwoToneSong : ScriptableObject
     {
         public AudioClip GoodClip, BadClip;
+        public string GoodName, BadName;
 
         public SimpleManiaSong NoteData;
     }
