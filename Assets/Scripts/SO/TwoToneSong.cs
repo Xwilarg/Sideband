@@ -9,6 +9,9 @@ namespace RhythmJam2024.SO
         public AudioClip GoodClip, BadClip;
         public string GoodName, BadName;
 
+        public int Bpm;
+        public string Author;
+
         public SimpleManiaSong NoteData;
     }
 }
