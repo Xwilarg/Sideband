@@ -21,70 +21,54 @@ MonoBehaviour:
     BeatSequences: []
   BeatSequenceChanges: []
   Notes:
-  - Time: 0
-    Lane: 3
-  - Time: 0.21428571428571427
-    Lane: 2
   - Time: 0.42857142857142855
     Lane: 0
-  - Time: 0.42857142857142855
-    Lane: 3
-  - Time: 0.6428571428571428
-    Lane: 2
-  - Time: 0.8571428571428571
-    Lane: 0
-  - Time: 0.8571428571428571
-    Lane: 3
   - Time: 1.2857142857142856
-    Lane: 3
-  - Time: 1.7142857142857142
-    Lane: 0
-  - Time: 1.7142857142857142
-    Lane: 2
-  - Time: 1.9285714285714284
-    Lane: 3
-  - Time: 2.142857142857143
     Lane: 0
   - Time: 2.142857142857143
     Lane: 2
-  - Time: 2.357142857142857
-    Lane: 3
-  - Time: 2.571428571428571
-    Lane: 0
   - Time: 3
-    Lane: 0
-  - Time: 3.4285714285714284
-    Lane: 0
-  - Time: 3.4285714285714284
-    Lane: 3
-  - Time: 3.642857142857143
     Lane: 2
   - Time: 3.8571428571428568
-    Lane: 0
-  - Time: 3.8571428571428568
-    Lane: 3
-  - Time: 4.071428571428571
-    Lane: 2
-  - Time: 4.285714285714286
-    Lane: 3
+    Lane: 1
   - Time: 4.714285714285714
-    Lane: 3
-  - Time: 5.142857142857142
-    Lane: 0
-  - Time: 5.142857142857142
     Lane: 1
-  - Time: 5.357142857142857
-    Lane: 2
   - Time: 5.571428571428571
-    Lane: 0
-  - Time: 5.571428571428571
-    Lane: 1
-  - Time: 5.785714285714286
-    Lane: 2
-  - Time: 6
     Lane: 0
   - Time: 6.428571428571428
     Lane: 0
+  - Time: 6.857142857142857
+    Lane: 1
+  - Time: 7.285714285714286
+    Lane: 1
+  - Time: 7.7142857142857135
+    Lane: 1
+  - Time: 8.142857142857142
+    Lane: 1
+  - Time: 8.571428571428571
+    Lane: 2
+  - Time: 9
+    Lane: 2
+  - Time: 9.428571428571429
+    Lane: 2
+  - Time: 9.857142857142856
+    Lane: 2
+  - Time: 10.285714285714285
+    Lane: 0
+  - Time: 10.714285714285714
+    Lane: 0
+  - Time: 11.142857142857142
+    Lane: 0
+  - Time: 11.571428571428571
+    Lane: 0
+  - Time: 12
+    Lane: 3
+  - Time: 12.428571428571427
+    Lane: 3
+  - Time: 12.857142857142856
+    Lane: 3
+  - Time: 13.285714285714285
+    Lane: 3
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 100
