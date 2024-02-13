@@ -932,6 +932,7 @@ MonoBehaviour:
   _hitText: {fileID: 7700727705822375866}
   _associatedScoreContainer: {fileID: 0}
   _scoreText: {fileID: 0}
+  _playerAnim: {fileID: 8067314006276828671}
 --- !u!1 &5049284150418233279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1063,7 +1064,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -775350407, guid: beeaa28097cdf1b4982e11f5df642d54, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4fc00f977f5a477468f1a2564eeb1886, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1083,7 +1084,7 @@ Animator:
   m_GameObject: {fileID: 5232775469103922636}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f90262c9cb556454fa56870e3ed15a21, type: 2}
+  m_Controller: {fileID: 22100000, guid: dbd26d63b84d0794c935048b4b8d588b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

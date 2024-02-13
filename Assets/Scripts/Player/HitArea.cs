@@ -23,6 +23,10 @@ namespace RhythmJam2024.Player
         [SerializeField]
         private TMP_Text _scoreText;
 
+        [SerializeField]
+        private Animator _playerAnim;
+        public Animator PlayerAnim => _playerAnim;
+
         public bool IsAIController { set; get; }
 
         public RectTransform LinesRT => _linesRT;
