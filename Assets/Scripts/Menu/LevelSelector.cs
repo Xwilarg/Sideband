@@ -14,6 +14,9 @@ namespace RhythmJam2024.Menu
         [SerializeField]
         private TMP_Text _mainAuthor, _mainTitle, _mainBpm;
 
+        [SerializeField]
+        private AudioSource _source;
+
         private int _currIndex;
 
         private void Awake()
@@ -24,6 +27,14 @@ namespace RhythmJam2024.Menu
         private void Start()
         {
             UpdateUI();
+        }
+
+        private void Update()
+        {
+            if (_source.time > 90f)
+            {
+                _source.time = 60f;
+            }
         }
 
         private string FormatSongName(TwoToneSong song)
@@ -60,6 +71,11 @@ namespace RhythmJam2024.Menu
                 }
                 _after[i].text = FormatSongName(songs[index]);
             }
+
+            _source.Stop();
+            _source.clip = songs[_currIndex].GoodClip;
+            _source.time = 60f;
+            _source.Play();
         }
 
         public void OnValidateInput(InputAction.CallbackContext value)
@@ -75,7 +91,12 @@ namespace RhythmJam2024.Menu
         {
             if (value.performed)
             {
-                Debug.Log(value.ReadValue<float>());
+                _currIndex += Mathf.RoundToInt(value.ReadValue<float>());
+
+                if (_currIndex < 0) _currIndex = SongManager.Instance.Songs.Length - 1;
+                else if (_currIndex > SongManager.Instance.Songs.Length - 1) _currIndex = 0;
+
+                UpdateUI();
             }
         }
     }
