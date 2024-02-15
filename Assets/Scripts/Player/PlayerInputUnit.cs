@@ -36,8 +36,8 @@ namespace RhythmJam2024.Player
         }
 
         public void OnHit1(InputAction.CallbackContext value) => OnHit(value, 0);
-        public void OnHit2(InputAction.CallbackContext value) => OnHit(value, 1);
+        public void OnHit2(InputAction.CallbackContext value) => OnHit(value, _hitArea != null && _hitArea.IsReversed ? 3 : 1);
         public void OnHit3(InputAction.CallbackContext value) => OnHit(value, 2);
-        public void OnHit4(InputAction.CallbackContext value) => OnHit(value, 3);
+        public void OnHit4(InputAction.CallbackContext value) => OnHit(value, _hitArea != null && _hitArea.IsReversed ? 1 : 3);
     }
 }

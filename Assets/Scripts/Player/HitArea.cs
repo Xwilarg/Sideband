@@ -29,6 +29,8 @@ namespace RhythmJam2024.Player
 
         public bool IsAIController { set; get; }
 
+        public bool IsReversed { set; get; }
+
         public RectTransform LinesRT => _linesRT;
 
         public int LineCount => _hits.Length;

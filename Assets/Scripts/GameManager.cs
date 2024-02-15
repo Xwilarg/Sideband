@@ -63,6 +63,7 @@ namespace RhythmJam2024
             {
                 _containers[1].IsAIController = true;
             }
+            _containers[1].IsReversed = true;
         }
 
         private void Start()
