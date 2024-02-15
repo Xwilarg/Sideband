@@ -36,6 +36,11 @@ namespace RhythmJam2024
         [SerializeField]
         private PlayerInputManager _inputManager;
 
+        [SerializeField]
+        private GameObject _gameOverPanel;
+        [SerializeField]
+        private TMP_Text _gameOverText;
+
         private TwoToneSong _song;
 
         private Queue<SimpleManiaNote> _unspawnedNotes;
@@ -115,6 +120,26 @@ namespace RhythmJam2024
             }
 
             _spawnedNotes.RemoveAll(x => x.PendingRemoval);
+
+            if (!_spawnedNotes.Any() && !_unspawnedNotes.Any() && !_gameOverPanel.gameObject.activeInHierarchy)
+            {
+                _gameOverPanel.gameObject.SetActive(true);
+                if (_containers[0].Score > _containers[1].Score)
+                {
+                    _gameOverText.color = new(0.9960784f, 0.4039216f, 0.7137255f);
+                    _gameOverText.text = "Player One Win!";
+                }
+                else if (_containers[0].Score < _containers[1].Score)
+                {
+                    _gameOverText.color = new(0.1960784f, 0.09411765f, 0.4627451f);
+                    _gameOverText.text = "Player Two Win!";
+                }
+                else
+                {
+                    _gameOverText.color = Color.black;
+                    _gameOverText.text = "It's a Draw!";
+                }
+            }
         }
 
         public void RegisterPlayer(PlayerInputUnit unit)
