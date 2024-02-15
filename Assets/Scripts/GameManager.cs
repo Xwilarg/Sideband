@@ -96,17 +96,17 @@ namespace RhythmJam2024
                 {
                     if (note.GameObject != null)
                     {
-                        if (note.HitArea.IsAIController)
-                        {
-                            note.HitArea.OnKeyDownSpring(note.Line);
-                            HitNote(note.Line, note.HitArea.GetInstanceID());
-                        }
-
                         Destroy(note.GameObject);
                         note.GameObject = null;
                     }
 
-                    if (note.CurrentTime > 1f + _info.HitInfo.Last().Distance)
+                    if (!note.PendingRemoval && note.HitArea.IsAIController && note.CurrentTime > note.AIHitTiming)
+                    {
+                        note.HitArea.OnKeyDownSpring(note.Line);
+                        HitNote(note.Line, note.HitArea.GetInstanceID());
+                    }
+
+                    if (note.CurrentTime > 1f + _info.HitInfo[0].Distance)
                     {
                         note.HitArea.ShowHitInfo(_info.MissInfo);
                         note.PendingRemoval = true;
@@ -177,6 +177,8 @@ namespace RhythmJam2024
                     TargetContainer = container.LinesRT,
                     Line = line,
 
+                    AIHitTiming = Random.Range(.8f, 1.2f),
+
                     HitArea = container
                 });
             }
@@ -225,6 +227,7 @@ namespace RhythmJam2024
             public RectTransform TargetContainer;
             public int Line;
 
+            public float AIHitTiming;
             public HitArea HitArea;
 
             public bool PendingRemoval;

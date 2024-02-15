@@ -2,7 +2,7 @@
 {
     public static class StaticData
     {
-        public static bool IsAgainstAI { set; get; }
+        public static bool IsAgainstAI { set; get; } = true;
         public static int SongSelected { set; get; }
     }
 }
