@@ -12,63 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ed2f6abad34c1458dc171fb7aed738, type: 3}
   m_Name: SampleData
   m_EditorClassIdentifier: 
-  Clip: {fileID: 8300000, guid: 6640471e0629aed4a95ee5e05665e243, type: 3}
+  Clip: {fileID: 8300000, guid: cf865626d0688174598dfdf3e9b6bc93, type: 3}
   FirstBeatOffset: 0
   Looping: 0
-  BaseBpm: 140
+  BaseBpm: 162
   BpmChanges: []
   BeatSequences:
     BeatSequences: []
   BeatSequenceChanges: []
   Notes:
-  - Time: 0.42857142857142855
-    Lane: 0
-  - Time: 1.2857142857142856
-    Lane: 0
-  - Time: 2.142857142857143
-    Lane: 2
-  - Time: 3
-    Lane: 2
-  - Time: 3.8571428571428568
+  - Time: 0.09259259259259259
     Lane: 1
-  - Time: 4.714285714285714
-    Lane: 1
-  - Time: 5.571428571428571
-    Lane: 0
-  - Time: 6.428571428571428
-    Lane: 0
-  - Time: 6.857142857142857
-    Lane: 1
-  - Time: 7.285714285714286
-    Lane: 1
-  - Time: 7.7142857142857135
-    Lane: 1
-  - Time: 8.142857142857142
-    Lane: 1
-  - Time: 8.571428571428571
+  - Time: 1.1111111111111112
     Lane: 2
-  - Time: 9
+  - Time: 1.4814814814814814
     Lane: 2
-  - Time: 9.428571428571429
+  - Time: 1.574074074074074
     Lane: 2
-  - Time: 9.857142857142856
+  - Time: 2.5925925925925926
     Lane: 2
-  - Time: 10.285714285714285
+  - Time: 3.148148148148148
+    Lane: 2
+  - Time: 4.0740740740740735
+    Lane: 2
+  - Time: 4.444444444444445
+    Lane: 2
+  - Time: 4.537037037037037
+    Lane: 2
+  - Time: 5.555555555555555
+    Lane: 2
+  - Time: 6.018518518518518
+    Lane: 1
+  - Time: 7.037037037037036
+    Lane: 2
+  - Time: 7.4074074074074066
+    Lane: 2
+  - Time: 7.5
+    Lane: 2
+  - Time: 8.518518518518517
+    Lane: 2
+  - Time: 9.074074074074074
+    Lane: 2
+  - Time: 10
+    Lane: 2
+  - Time: 10.37037037037037
+    Lane: 2
+  - Time: 10.462962962962962
+    Lane: 2
+  - Time: 11.388888888888888
+    Lane: 2
+  - Time: 11.666666666666666
+    Lane: 2
+  - Time: 11.944444444444445
     Lane: 0
-  - Time: 10.714285714285714
-    Lane: 0
-  - Time: 11.142857142857142
-    Lane: 0
-  - Time: 11.571428571428571
-    Lane: 0
-  - Time: 12
-    Lane: 3
-  - Time: 12.428571428571427
-    Lane: 3
-  - Time: 12.857142857142856
-    Lane: 3
-  - Time: 13.285714285714285
-    Lane: 3
+  - Time: 11.944444444444445
+    Lane: 2
+  - Time: 12.314814814814815
+    Lane: 1
+  - Time: 12.685185185185185
+    Lane: 2
+  - Time: 12.777777777777777
+    Lane: 2
+  - Time: 13.055555555555555
+    Lane: 1
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 100
