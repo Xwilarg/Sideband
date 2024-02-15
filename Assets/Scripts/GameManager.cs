@@ -244,6 +244,21 @@ namespace RhythmJam2024
             }
         }
 
+        public void BackToMenu()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        public void Restart()
+        {
+            SceneManager.LoadScene("Main");
+        }
+
+        public void BackToLevelSelection()
+        {
+            SceneManager.LoadScene("LevelSelector");
+        }
+
         private class NoteData
         {
             public GameObject GameObject;

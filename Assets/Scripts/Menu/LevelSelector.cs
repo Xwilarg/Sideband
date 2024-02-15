@@ -87,16 +87,30 @@ namespace RhythmJam2024.Menu
             }
         }
 
+        private int _lastDir = 0;
         public void OnMoveY(InputAction.CallbackContext value)
         {
             if (value.performed)
             {
-                _currIndex += Mathf.RoundToInt(value.ReadValue<float>());
+                var tmp = Mathf.RoundToInt(value.ReadValue<float>());
+                int dir = 0;
+                if (tmp > .5f) dir = 1;
+                else if (tmp < -.5f) dir = -1;
 
-                if (_currIndex < 0) _currIndex = SongManager.Instance.Songs.Length - 1;
-                else if (_currIndex > SongManager.Instance.Songs.Length - 1) _currIndex = 0;
+                if (_lastDir != dir)
+                {
+                    _lastDir = dir;
 
-                UpdateUI();
+                    if (dir != 0)
+                    {
+                        _currIndex += dir;
+
+                        if (_currIndex < 0) _currIndex = SongManager.Instance.Songs.Length - 1;
+                        else if (_currIndex > SongManager.Instance.Songs.Length - 1) _currIndex = 0;
+
+                        UpdateUI();
+                    }
+                }
             }
         }
     }
