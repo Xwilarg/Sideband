@@ -49,7 +49,7 @@ namespace RhythmJam2024
 
         private readonly List<PlayerInputUnit> _players = new();
 
-        private const float FallDuration = 1f;
+        private float _currFallDuration = 1f;
 
         private bool _didStart;
 
@@ -91,7 +91,7 @@ namespace RhythmJam2024
 
             foreach (var note in _spawnedNotes)
             {
-                note.CurrentTime += Time.deltaTime * 1f / FallDuration;
+                note.CurrentTime += Time.deltaTime * 1f / note.FallDuration;
 
                 if (note.GameObject != null)
                 {
@@ -176,10 +176,10 @@ namespace RhythmJam2024
 
             var closestUnspawnedNote = _unspawnedNotes.Peek();
 
-            if (currentTime > closestUnspawnedNote.Time - FallDuration)
+            if (currentTime > closestUnspawnedNote.Time - _currFallDuration)
             {
                 _unspawnedNotes.Dequeue();
-                SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - FallDuration));
+                SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - _currFallDuration));
             }
         }
 
@@ -205,8 +205,15 @@ namespace RhythmJam2024
 
                     AIHitTiming = Random.Range(.8f, 1.2f),
 
-                    HitArea = container
+                    HitArea = container,
+
+                    FallDuration = _currFallDuration
                 });
+
+                if (line == 3 && _currFallDuration > .2f)
+                {
+                    _currFallDuration -= .05f;
+                }
             }
         }
 
@@ -272,6 +279,8 @@ namespace RhythmJam2024
             public HitArea HitArea;
 
             public bool PendingRemoval;
+
+            public float FallDuration;
         }
     }
 }
