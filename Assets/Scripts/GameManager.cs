@@ -212,7 +212,7 @@ namespace RhythmJam2024
 
                 if (line == 3 && _currFallDuration > .2f)
                 {
-                    _currFallDuration -= .05f;
+                    _currFallDuration -= .025f;
                 }
             }
         }
