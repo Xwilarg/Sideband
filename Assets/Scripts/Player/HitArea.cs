@@ -25,6 +25,12 @@ namespace RhythmJam2024.Player
 
         [SerializeField]
         private Animator _playerAnim;
+
+        [SerializeField]
+        private TMP_Text _comboText;
+
+        private int _combo;
+
         public Animator PlayerAnim => _playerAnim;
 
         public bool IsAIController { set; get; }
@@ -70,6 +76,19 @@ namespace RhythmJam2024.Player
             }
         }
 
+        public void IncreaseComboText()
+        {
+            _combo++;
+            _comboText.gameObject.SetActive(_combo >= 10);
+            _comboText.text = _combo.ToString();
+        }
+
+        public void ResetCombo()
+        {
+            _combo = 0;
+            _comboText.gameObject.SetActive(false);
+        }
+
         public void SetScoreValue(float value)
         {
             _associatedScoreContainer.localScale = new(value, 1f);
@@ -102,6 +121,15 @@ namespace RhythmJam2024.Player
 
         public void ShowHitInfo(HitInfo hit)
         {
+            if (hit.DoesBreakCombo)
+            {
+                ResetCombo();
+            }
+            else
+            {
+                IncreaseComboText();
+            }
+
             _hitText.text = hit.DisplayText;
             _hitText.color = hit.Color;
 
