@@ -64,6 +64,8 @@ namespace RhythmJam2024
                 _containers[1].IsAIController = true;
             }
             _containers[1].IsReversed = true;
+
+            _waitingForPlayers.text = "Waiting for Player 1 Input";
         }
 
         private void Start()
@@ -147,6 +149,8 @@ namespace RhythmJam2024
         {
             unit.Init(_containers[_players.Count]);
             _players.Add(unit);
+
+            _waitingForPlayers.text = $"Waiting for Player {_players.Count + 1} Input";
 
             if (_players.Count == (StaticData.IsAgainstAI ? 1 : 2))
             {
