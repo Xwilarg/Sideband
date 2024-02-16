@@ -37,16 +37,11 @@ namespace RhythmJam2024.Menu
             }
         }
 
-        private string FormatSongName(TwoToneSong song)
-        {
-            return $"{song.GoodName} / {song.BadName}";
-        }
-
         private void UpdateUI()
         {
             var songs = SongManager.Instance.Songs;
 
-            _mainTitle.text = FormatSongName(songs[_currIndex]);
+            _mainTitle.text = songs[_currIndex].Name;
             _mainBpm.text = songs[_currIndex].Bpm.ToString();
             _mainAuthor.text = songs[_currIndex].Author;
 
@@ -58,7 +53,7 @@ namespace RhythmJam2024.Menu
                 {
                     index = songs.Length - 1;
                 }
-                _before[i].text = FormatSongName(songs[index]);
+                _before[i].text = songs[index].Name;
             }
 
             index = _currIndex;
@@ -69,7 +64,7 @@ namespace RhythmJam2024.Menu
                 {
                     index = 0;
                 }
-                _after[i].text = FormatSongName(songs[index]);
+                _after[i].text = songs[index].Name;
             }
 
             _source.Stop();

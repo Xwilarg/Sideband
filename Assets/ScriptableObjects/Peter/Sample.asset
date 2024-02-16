@@ -14,8 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: cf865626d0688174598dfdf3e9b6bc93, type: 3}
   BadClip: {fileID: 8300000, guid: 1ac72a9c48a7b1e479b809f2ed17a5a8, type: 3}
-  GoodName: Peter Happy
-  BadName: Peter Horror
+  Name: Midnight Choices
   Bpm: 162
   Author: Peter Barn
   NoteData: {fileID: 11400000, guid: 9d47e8a29405066419c171b46f152505, type: 2}
