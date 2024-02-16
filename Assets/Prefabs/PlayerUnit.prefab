@@ -74,6 +74,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 337540402695152125}
         m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
+        m_MethodName: OnRestart
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 337540402695152125}
+        m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
         m_MethodName: OnHit1
         m_Mode: 0
         m_Arguments:
@@ -90,6 +102,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 337540402695152125}
         m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
+        m_MethodName: OnLevelSelection
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 337540402695152125}
+        m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
         m_MethodName: OnHit2
         m_Mode: 0
         m_Arguments:
@@ -104,6 +128,18 @@ MonoBehaviour:
     m_ActionName: Player/Hit2[/Keyboard/f]
   - m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 337540402695152125}
+        m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
+        m_MethodName: OnBackToMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 337540402695152125}
         m_TargetAssemblyTypeName: RhythmJam2024.Player.PlayerInputUnit, Assembly-CSharp
         m_MethodName: OnHit3
@@ -174,6 +210,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0f44d25a-5a31-4f98-b66a-6c0af024f40d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6930712e-b734-46c7-a0ba-1e5633cf66f6
+    m_ActionName: Menu/Validate[/Keyboard/enter,/Keyboard/space,/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ccd038f-e216-47ea-9a7d-ea131865ec65
+    m_ActionName: Menu/YMove[/Keyboard/downArrow,/Keyboard/upArrow,/XInputControllerWindows/leftStick/y]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

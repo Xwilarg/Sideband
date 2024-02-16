@@ -39,5 +39,21 @@ namespace RhythmJam2024.Player
         public void OnHit2(InputAction.CallbackContext value) => OnHit(value, _hitArea != null && _hitArea.IsReversed ? 3 : 1);
         public void OnHit3(InputAction.CallbackContext value) => OnHit(value, 2);
         public void OnHit4(InputAction.CallbackContext value) => OnHit(value, _hitArea != null && _hitArea.IsReversed ? 1 : 3);
+
+
+        public void OnRestart(InputAction.CallbackContext value)
+        {
+            GameManager.Instance.OnRestart(value);
+        }
+
+        public void OnBackToMenu(InputAction.CallbackContext value)
+        {
+            GameManager.Instance.OnBackToMenu(value);
+        }
+
+        public void OnLevelSelection(InputAction.CallbackContext value)
+        {
+            GameManager.Instance.OnLevelSelection(value);
+        }
     }
 }
