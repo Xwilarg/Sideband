@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70d7264e1b38244ba685c1d8c90043c, type: 3}
+  m_Name: WordedSong
+  m_EditorClassIdentifier: 
+  GoodClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
+  BadClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
+  Name: Worded
+  Bpm: 153
+  Author: WordedPuppet
+  Difficulty: 
+  NoteData: {fileID: 11400000, guid: a171c98f77329144784eca4d26c99e50, type: 2}

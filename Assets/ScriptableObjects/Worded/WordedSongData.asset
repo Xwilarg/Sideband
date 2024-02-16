@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ed2f6abad34c1458dc171fb7aed738, type: 3}
+  m_Name: WordedSongData
+  m_EditorClassIdentifier: 
+  Clip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
+  FirstBeatOffset: 0
+  Looping: 0
+  BaseBpm: 153
+  BpmChanges: []
+  BeatSequences:
+    BeatSequences: []
+  BeatSequenceChanges: []
+  Notes: []
+  NoteFallTime: 1
+  PerfectTimeMs: 50
+  GoodTimeMs: 100
