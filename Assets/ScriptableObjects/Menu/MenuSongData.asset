@@ -66,37 +66,35 @@ MonoBehaviour:
   - Time: 17.142857142857142
     Lane: 1
   - Time: 17.5
-    Lane: 3
+    Lane: 2
   - Time: 17.738095238095237
-    Lane: 3
+    Lane: 2
   - Time: 17.976190476190474
-    Lane: 3
+    Lane: 2
   - Time: 18.452380952380953
     Lane: 1
   - Time: 19.047619047619047
     Lane: 1
   - Time: 20.357142857142858
-    Lane: 0
+    Lane: 1
   - Time: 20.357142857142858
     Lane: 2
   - Time: 20.952380952380953
     Lane: 0
   - Time: 20.952380952380953
-    Lane: 2
+    Lane: 1
   - Time: 22.26190476190476
     Lane: 1
   - Time: 22.619047619047617
     Lane: 1
   - Time: 22.976190476190474
-    Lane: 1
-  - Time: 22.976190476190474
-    Lane: 2
+    Lane: 3
   - Time: 23.095238095238095
-    Lane: 2
+    Lane: 3
   - Time: 23.21428571428571
-    Lane: 2
+    Lane: 3
   - Time: 23.57142857142857
-    Lane: 2
+    Lane: 1
   - Time: 24.166666666666664
     Lane: 0
   - Time: 24.88095238095238
@@ -123,14 +121,10 @@ MonoBehaviour:
     Lane: 1
   - Time: 30.595238095238095
     Lane: 2
-  - Time: 30.71428571428571
-    Lane: 2
   - Time: 30.833333333333332
-    Lane: 2
-  - Time: 30.95238095238095
-    Lane: 2
+    Lane: 1
   - Time: 31.07142857142857
-    Lane: 2
+    Lane: 0
   - Time: 31.547619047619047
     Lane: 0
   - Time: 31.547619047619047
@@ -148,11 +142,7 @@ MonoBehaviour:
   - Time: 33.80952380952381
     Lane: 2
   - Time: 34.285714285714285
-    Lane: 0
-  - Time: 34.285714285714285
     Lane: 1
-  - Time: 34.285714285714285
-    Lane: 2
   - Time: 34.52380952380952
     Lane: 1
   - Time: 35.595238095238095
@@ -166,9 +156,9 @@ MonoBehaviour:
   - Time: 38.214285714285715
     Lane: 2
   - Time: 38.45238095238095
-    Lane: 1
+    Lane: 2
   - Time: 38.69047619047619
-    Lane: 0
+    Lane: 2
   - Time: 38.92857142857142
     Lane: 0
   - Time: 39.285714285714285
@@ -198,9 +188,7 @@ MonoBehaviour:
   - Time: 45.11904761904761
     Lane: 3
   - Time: 45.476190476190474
-    Lane: 0
-  - Time: 45.476190476190474
-    Lane: 2
+    Lane: 1
   - Time: 45.476190476190474
     Lane: 3
   NoteFallTime: 1
