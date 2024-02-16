@@ -54,7 +54,7 @@ MonoBehaviour:
   - Time: 12.724137931034482
     Lane: 1
   - Time: 13.241379310344827
-    Lane: 3
+    Lane: 2
   - Time: 14.068965517241379
     Lane: 0
   - Time: 15.724137931034482
@@ -132,13 +132,13 @@ MonoBehaviour:
   - Time: 37.6551724137931
     Lane: 2
   - Time: 38.06896551724138
-    Lane: 3
+    Lane: 1
   - Time: 38.48275862068965
-    Lane: 3
+    Lane: 1
   - Time: 38.89655172413793
-    Lane: 3
+    Lane: 0
   - Time: 39.310344827586206
-    Lane: 3
+    Lane: 0
   - Time: 39.724137931034484
     Lane: 1
   - Time: 40.3448275862069
@@ -302,49 +302,49 @@ MonoBehaviour:
   - Time: 78.93103448275862
     Lane: 0
   - Time: 79.44827586206897
-    Lane: 3
+    Lane: 0
   - Time: 80.06896551724138
     Lane: 1
   - Time: 80.27586206896552
     Lane: 2
   - Time: 81.10344827586206
-    Lane: 3
+    Lane: 2
   - Time: 81.72413793103448
     Lane: 0
   - Time: 81.93103448275862
     Lane: 1
   - Time: 82.75862068965517
-    Lane: 3
+    Lane: 0
   - Time: 83.37931034482759
     Lane: 1
   - Time: 83.58620689655173
     Lane: 2
   - Time: 84.41379310344827
-    Lane: 3
+    Lane: 2
   - Time: 85.03448275862068
     Lane: 2
   - Time: 85.24137931034483
     Lane: 0
   - Time: 86.06896551724138
-    Lane: 3
+    Lane: 0
   - Time: 86.6896551724138
     Lane: 0
   - Time: 86.89655172413794
     Lane: 1
   - Time: 87.72413793103448
-    Lane: 3
+    Lane: 2
   - Time: 88.34482758620689
     Lane: 1
   - Time: 88.55172413793103
     Lane: 2
   - Time: 89.37931034482759
-    Lane: 3
+    Lane: 0
   - Time: 90
     Lane: 2
   - Time: 90.20689655172414
     Lane: 1
   - Time: 91.03448275862068
-    Lane: 3
+    Lane: 2
   - Time: 91.6551724137931
     Lane: 2
   - Time: 91.86206896551724
@@ -354,7 +354,7 @@ MonoBehaviour:
   - Time: 92.48275862068965
     Lane: 2
   - Time: 92.6896551724138
-    Lane: 3
+    Lane: 1
   - Time: 93.10344827586206
     Lane: 0
   - Time: 93.3103448275862
@@ -442,7 +442,7 @@ MonoBehaviour:
   - Time: 103.86206896551724
     Lane: 0
   - Time: 104.27586206896551
-    Lane: 3
+    Lane: 2
   - Time: 105.93103448275862
     Lane: 1
   - Time: 106.34482758620689
@@ -674,7 +674,7 @@ MonoBehaviour:
   - Time: 164.48275862068965
     Lane: 1
   - Time: 164.89655172413794
-    Lane: 2
+    Lane: 3
   - Time: 165.10344827586206
     Lane: 0
   - Time: 165.20689655172413
@@ -862,7 +862,7 @@ MonoBehaviour:
   - Time: 190.9655172413793
     Lane: 0
   - Time: 191.3793103448276
-    Lane: 2
+    Lane: 3
   NoteFallTime: 1
   PerfectTimeMs: 50
   GoodTimeMs: 100
