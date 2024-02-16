@@ -31,9 +31,9 @@ namespace RhythmJam2024.Menu
 
         private void Update()
         {
-            if (_source.time > 90f)
+            if (_source.time > _source.clip.length / 2f + 20f)
             {
-                _source.time = 60f;
+                _source.time = _source.clip.length / 2f;
             }
         }
 
@@ -69,7 +69,7 @@ namespace RhythmJam2024.Menu
 
             _source.Stop();
             _source.clip = songs[_currIndex].GoodClip;
-            _source.time = 60f;
+            _source.time = _source.clip.length / 2f;
             _source.Play();
         }
 
@@ -85,7 +85,7 @@ namespace RhythmJam2024.Menu
         private int _lastDir = 0;
         public void OnMoveY(InputAction.CallbackContext value)
         {
-            if (value.performed)
+            if (value.performed || value.phase == InputActionPhase.Canceled)
             {
                 var tmp = Mathf.RoundToInt(value.ReadValue<float>());
                 int dir = 0;

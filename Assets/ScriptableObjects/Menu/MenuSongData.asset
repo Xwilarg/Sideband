@@ -12,4 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ed2f6abad34c1458dc171fb7aed738, type: 3}
   m_Name: MenuSongData
   m_EditorClassIdentifier: 
-  Notes: []
+  Clip: {fileID: 8300000, guid: 03c30fab1b97c6748b52d5db6dc8a5d4, type: 3}
+  FirstBeatOffset: 0
+  Looping: 0
+  BaseBpm: 126
+  BpmChanges: []
+  BeatSequences:
+    BeatSequences: []
+  BeatSequenceChanges: []
+  Notes:
+  - Time: 0
+    Lane: 1
+  - Time: 1.4285714285714284
+    Lane: 1
+  - Time: 1.9047619047619047
+    Lane: 1
+  - Time: 3.333333333333333
+    Lane: 0
+  - Time: 3.8095238095238093
+    Lane: 0
+  - Time: 5.238095238095238
+    Lane: 2
+  - Time: 5.7142857142857135
+    Lane: 2
+  - Time: 7.142857142857142
+    Lane: 1
+  - Time: 7.3809523809523805
+    Lane: 0
+  - Time: 7.619047619047619
+    Lane: 1
+  - Time: 9.047619047619047
+    Lane: 1
+  - Time: 9.523809523809524
+    Lane: 1
+  NoteFallTime: 1
+  PerfectTimeMs: 50
+  GoodTimeMs: 100
