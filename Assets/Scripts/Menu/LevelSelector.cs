@@ -12,7 +12,7 @@ namespace RhythmJam2024.Menu
         private TMP_Text[] _before, _after;
 
         [SerializeField]
-        private TMP_Text _mainAuthor, _mainTitle, _mainBpm;
+        private TMP_Text _mainAuthor, _mainTitle, _mainBpm, _mainDifficulty;
 
         [SerializeField]
         private AudioSource _source;
@@ -44,6 +44,7 @@ namespace RhythmJam2024.Menu
             _mainTitle.text = songs[_currIndex].Name;
             _mainBpm.text = songs[_currIndex].Bpm.ToString();
             _mainAuthor.text = songs[_currIndex].Author;
+            _mainDifficulty.text = songs[_currIndex].Difficulty;
 
             var index = _currIndex;
             for (var i = 0; i < _before.Length; i++)

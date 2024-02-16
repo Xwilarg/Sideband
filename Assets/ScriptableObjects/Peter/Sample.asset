@@ -17,4 +17,5 @@ MonoBehaviour:
   Name: Midnight Choices
   Bpm: 162
   Author: Peter Barn
+  Difficulty: Hard
   NoteData: {fileID: 11400000, guid: 9d47e8a29405066419c171b46f152505, type: 2}

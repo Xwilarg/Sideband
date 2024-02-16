@@ -17,4 +17,5 @@ MonoBehaviour:
   Name: Carrier Frequency
   Bpm: 126
   Author: Peter Barn
+  Difficulty: Easy
   NoteData: {fileID: 11400000, guid: 37e0587ad4d45d849a1dd997a1efc512, type: 2}

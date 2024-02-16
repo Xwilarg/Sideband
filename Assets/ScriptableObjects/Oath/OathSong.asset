@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: a863c7b055e2b2246a775b4ec46b84dc, type: 3}
   BadClip: {fileID: 8300000, guid: a863c7b055e2b2246a775b4ec46b84dc, type: 3}
-  Name: SAMPLE NAME
+  Name: Sunshine
   Bpm: 145
   Author: Oath
+  Difficulty: Normal
   NoteData: {fileID: 11400000, guid: 1be15677531dee64fb1529ec7a201ffb, type: 2}

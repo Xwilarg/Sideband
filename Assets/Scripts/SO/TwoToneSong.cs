@@ -12,6 +12,8 @@ namespace RhythmJam2024.SO
         public int Bpm;
         public string Author;
 
+        public string Difficulty;
+
         public SimpleManiaSong NoteData;
     }
 }
