@@ -21,6 +21,9 @@ namespace RhythmJam2024.Player
         private RectTransform _associatedScoreContainer;
 
         [SerializeField]
+        private RectTransform _background;
+
+        [SerializeField]
         private TMP_Text _scoreText;
 
         [SerializeField]
@@ -92,6 +95,7 @@ namespace RhythmJam2024.Player
         public void SetScoreValue(float value)
         {
             _associatedScoreContainer.localScale = new(value, 1f);
+            _background.localScale = new(value, 1f);
         }
 
         public void OnKeyDownSpring(int line)

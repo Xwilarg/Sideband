@@ -1308,16 +1308,16 @@ RectTransform:
   m_GameObject: {fileID: 1043919287}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002095611}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1043919289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,6 +1663,10 @@ PrefabInstance:
       propertyPath: _scoreText
       value: 
       objectReference: {fileID: 1261151249}
+    - target: {fileID: 4750688682999031038, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
+      propertyPath: _background
+      value: 
+      objectReference: {fileID: 2137517665}
     - target: {fileID: 4750688682999031038, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
       propertyPath: _associatedScoreContainer
       value: 
@@ -3374,16 +3378,16 @@ RectTransform:
   m_GameObject: {fileID: 2137517664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2002095611}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &2137517666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,6 +3503,10 @@ PrefabInstance:
       propertyPath: _scoreText
       value: 
       objectReference: {fileID: 1956981363}
+    - target: {fileID: 4750688682999031038, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
+      propertyPath: _background
+      value: 
+      objectReference: {fileID: 1043919288}
     - target: {fileID: 4750688682999031038, guid: c74d36a691e349b4cb6bcc78a3ffc922, type: 3}
       propertyPath: _associatedScoreContainer
       value: 
