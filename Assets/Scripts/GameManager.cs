@@ -271,6 +271,30 @@ namespace RhythmJam2024
             SceneManager.LoadScene("LevelSelector");
         }
 
+        public void OnRestart(InputAction.CallbackContext value)
+        {
+            if (value.performed && _gameOverPanel.gameObject.activeInHierarchy)
+            {
+                Restart();
+            }
+        }
+
+        public void OnBackToMenu(InputAction.CallbackContext value)
+        {
+            if (value.performed && _gameOverPanel.gameObject.activeInHierarchy)
+            {
+                BackToMenu();
+            }
+        }
+
+        public void OnLevelSelection(InputAction.CallbackContext value)
+        {
+            if (value.performed && _gameOverPanel.gameObject.activeInHierarchy)
+            {
+                BackToLevelSelection();
+            }
+        }
+
         private class NoteData
         {
             public GameObject GameObject;
