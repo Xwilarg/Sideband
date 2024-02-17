@@ -33,6 +33,11 @@ namespace RhythmJam2024
             _delayBeforeSong = timer;
         }
 
+        public void Stop()
+        {
+            _source.Stop();
+        }
+
         private void Update()
         {
             if (_delayBeforeSong > 0f)

@@ -41,6 +41,12 @@ namespace RhythmJam2024
         [SerializeField]
         private TMP_Text _gameOverText;
 
+        [SerializeField]
+        private AudioSource _victoryBgm;
+
+        [SerializeField]
+        private AudioClip _happyVClip, _horrorVClip;
+
         private TwoToneSong _song;
 
         private Queue<SimpleManiaNote> _unspawnedNotes;
@@ -131,17 +137,21 @@ namespace RhythmJam2024
                 {
                     _gameOverText.color = new(0.9960784f, 0.4039216f, 0.7137255f);
                     _gameOverText.text = "Player One Win!";
+                    _victoryBgm.clip = _happyVClip;
                 }
                 else if (_containers[0].Score < _containers[1].Score)
                 {
                     _gameOverText.color = new(0.1960784f, 0.09411765f, 0.4627451f);
                     _gameOverText.text = "Player Two Win!";
+                    _victoryBgm.clip = _horrorVClip;
                 }
                 else
                 {
                     _gameOverText.color = Color.black;
                     _gameOverText.text = "It's a Draw!";
+                    _victoryBgm.clip = _happyVClip;
                 }
+                _victoryBgm.Play();
             }
         }
 
