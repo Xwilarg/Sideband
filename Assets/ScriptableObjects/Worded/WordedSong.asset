@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WordedSong
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
-  BadClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
+  BadClip: {fileID: 8300000, guid: d8617a16eced17041b99c5a908926859, type: 3}
   Name: No Name
   Bpm: 153
   Author: WordedPuppet
