@@ -90,8 +90,8 @@ namespace RhythmJam2024.Menu
             {
                 var tmp = Mathf.RoundToInt(value.ReadValue<float>());
                 int dir = 0;
-                if (tmp > .5f) dir = 1;
-                else if (tmp < -.5f) dir = -1;
+                if (tmp > .5f) dir = -1;
+                else if (tmp < -.5f) dir = 1;
 
                 if (_lastDir != dir)
                 {
