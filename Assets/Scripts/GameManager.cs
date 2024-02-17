@@ -169,11 +169,6 @@ namespace RhythmJam2024
                 _goodEngine.Play(3f);
                 _badEngine.Play(3f);
 
-                foreach (var c in _containers)
-                {
-                    c.PlayerAnim.SetTrigger("Start");
-                }
-
                 _didStart = true;
 
 

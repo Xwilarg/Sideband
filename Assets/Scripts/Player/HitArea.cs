@@ -34,8 +34,6 @@ namespace RhythmJam2024.Player
 
         private int _combo;
 
-        public Animator PlayerAnim => _playerAnim;
-
         public bool IsAIController { set; get; }
 
         public bool IsReversed { set; get; }
@@ -83,11 +81,16 @@ namespace RhythmJam2024.Player
         {
             _combo++;
             _comboText.gameObject.SetActive(_combo >= 10);
+            if (_combo == 10)
+            {
+                _playerAnim.SetBool("Combo", true);
+            }
             _comboText.text = _combo.ToString();
         }
 
         public void ResetCombo()
         {
+            _playerAnim.SetBool("Combo", false);
             _combo = 0;
             _comboText.gameObject.SetActive(false);
         }
