@@ -128,8 +128,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 497
-        height: 920
+        width: 498
+        height: 902
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Character1_GameIdle_1
       rect:
         serializedVersion: 2
-        x: 497
+        x: 498
         y: 0
-        width: 497
-        height: 920
+        width: 498
+        height: 902
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Character1_GameIdle_2
       rect:
         serializedVersion: 2
-        x: 994
+        x: 996
         y: 0
-        width: 497
-        height: 920
+        width: 498
+        height: 902
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
