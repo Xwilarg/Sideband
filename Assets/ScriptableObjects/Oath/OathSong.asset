@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70d7264e1b38244ba685c1d8c90043c, type: 3}
   m_Name: OathSong
   m_EditorClassIdentifier: 
-  GoodClip: {fileID: 8300000, guid: a863c7b055e2b2246a775b4ec46b84dc, type: 3}
-  BadClip: {fileID: 8300000, guid: a863c7b055e2b2246a775b4ec46b84dc, type: 3}
+  GoodClip: {fileID: 8300000, guid: 2832a30de4d1bb141a2283aaf4057d67, type: 3}
+  BadClip: {fileID: 8300000, guid: 2832a30de4d1bb141a2283aaf4057d67, type: 3}
   Name: Sunshine
   Bpm: 145
   Author: Oath
