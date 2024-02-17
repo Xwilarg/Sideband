@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
   BadClip: {fileID: 8300000, guid: ab4f6e45ac643554b8d889c9a0f10697, type: 3}
-  Name: Worded
+  Name: No Name
   Bpm: 153
   Author: WordedPuppet
-  Difficulty: 
+  Difficulty: Expert
   NoteData: {fileID: 11400000, guid: a171c98f77329144784eca4d26c99e50, type: 2}
