@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace RhythmJam2024.Player
 {
@@ -54,6 +55,14 @@ namespace RhythmJam2024.Player
         public void OnLevelSelection(InputAction.CallbackContext value)
         {
             GameManager.Instance.OnLevelSelection(value);
+        }
+
+        public void OnLevelSelectionForce(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                SceneManager.LoadScene("LevelSelector");
+            }
         }
     }
 }
