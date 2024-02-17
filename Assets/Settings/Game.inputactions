@@ -266,6 +266,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Settings",
+                    "type": "Button",
+                    "id": "215a4d47-6b95-4e0f-b404-ee89ebe87a6a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "YMove",
                     "type": "Value",
                     "id": "4ccd038f-e216-47ea-9a7d-ea131865ec65",
@@ -350,6 +359,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "YMove",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8c046c6f-d27b-41f0-98db-b352281f255c",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6244e99e-56a6-48f5-999b-ee00b8f69d3b",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Settings",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

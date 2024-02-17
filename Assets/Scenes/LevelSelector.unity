@@ -1760,6 +1760,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 0f44d25a-5a31-4f98-b66a-6c0af024f40d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b861fefd-f997-411b-bf60-1a5164e743bf
+    m_ActionName: Player/Settings[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1683106909}
+        m_TargetAssemblyTypeName: RhythmJam2024.Menu.LevelSelector, Assembly-CSharp
+        m_MethodName: OnExitMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 215a4d47-6b95-4e0f-b404-ee89ebe87a6a
+    m_ActionName: Menu/Settings[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Menu

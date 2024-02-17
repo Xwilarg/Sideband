@@ -109,5 +109,13 @@ namespace RhythmJam2024.Menu
                 }
             }
         }
+
+        public void OnExitMenu(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
     }
 }
