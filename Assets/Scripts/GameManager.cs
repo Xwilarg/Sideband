@@ -194,6 +194,7 @@ namespace RhythmJam2024
             {
                 _unspawnedNotes.Dequeue();
                 SpawnNote(closestUnspawnedNote.Lane, currentTime - (closestUnspawnedNote.Time - _currFallDuration));
+                TrySpawningNotes(currentTime);
             }
         }
 
