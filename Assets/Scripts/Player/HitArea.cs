@@ -83,14 +83,14 @@ namespace RhythmJam2024.Player
             _comboText.gameObject.SetActive(_combo >= 10);
             if (_combo == 10)
             {
-                _playerAnim.SetBool("Combo", true);
+                _playerAnim.SetBool("IsCombo", true);
             }
             _comboText.text = _combo.ToString();
         }
 
         public void ResetCombo()
         {
-            _playerAnim.SetBool("Combo", false);
+            _playerAnim.SetBool("IsCombo", false);
             _combo = 0;
             _comboText.gameObject.SetActive(false);
         }
