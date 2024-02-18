@@ -29,5 +29,13 @@ namespace RhythmJam2024
         {
             _creditsPanel.SetActive(false);
         }
+
+        public void Quit()
+        {
+            if (Application.platform != RuntimePlatform.WebGLPlayer)
+            {
+                Application.Quit();
+            }
+        }
     }
 }
