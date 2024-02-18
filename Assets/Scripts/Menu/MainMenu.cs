@@ -22,7 +22,8 @@ namespace RhythmJam2024
 
         public void OpenCredits()
         {
-            _creditsPanel.SetActive(true);
+            if (_creditsPanel.activeInHierarchy) _creditsPanel.SetActive(false);
+            else _creditsPanel.SetActive(true);
         }
 
         public void CloseCredits()
