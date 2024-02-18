@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GoodClip: {fileID: 8300000, guid: 03c30fab1b97c6748b52d5db6dc8a5d4, type: 3}
   BadClip: {fileID: 8300000, guid: 03c30fab1b97c6748b52d5db6dc8a5d4, type: 3}
-  Name: Carrier Frequency
+  Name: Carrier Frequency (No Variation)
   Bpm: 126
   Author: Peter Barn
   Difficulty: Easy
